@@ -1,0 +1,4 @@
+mercurial/* filter=lfs diff=lfs merge=lfs -text
+mercurial/SOURCE -filter -diff -merge text
+mercurial/LICENSE -filter -diff -merge text
+* text=auto
