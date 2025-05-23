@@ -1,3 +1,7 @@
+The following license applies to portions of the DB file.
+
+=======================================================================
+
 Attribution-ShareAlike 4.0 International
 
 =======================================================================
