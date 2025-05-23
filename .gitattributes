@@ -1,3 +1,7 @@
+lexical-db/**/* filter=lfs diff=lfs merge=lfs -text
+lexical-db/SOURCE.md -filter -diff -merge text
+lexical-db/LICENSE.md -filter -diff -merge text
+lexical-db/lexical.db.xz.sha256 -filter -diff -merge text
 mercurial/* filter=lfs diff=lfs merge=lfs -text
 mercurial/SOURCE -filter -diff -merge text
 mercurial/LICENSE -filter -diff -merge text
