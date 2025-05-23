@@ -16,8 +16,8 @@ To add dependencies to this repo:
 4. Update the `.gitattributes` file in the root of this repository to include your new subdirectory. For example, the following would add all files in all subdirectories of `new_dependency` to be tracked by LFS except for `SOURCE` and `LICENSE`.
 ```
 new_dependency/**/* filter=lfs diff=lfs merge=lfs -text
-new_dependency/SOURCE -filter -diff -merge text
-new_dependency/LICENSE -filter -diff -merge text
+new_dependency/SOURCE filter= diff= merge= text
+new_dependency/LICENSE filter= diff= merge= text
 ```
 5. Once `.gitattributes` has been updated and saved, run `git add <new files>` (or use your Git client to add them in whatever way it allows) to stage your new files. Also make sure to add `.gitattributes` to the list of files to update.
 6. From the command line, run `git lfs ls-files` to verify that your new files are being tracked by LFS before committing.
