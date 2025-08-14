@@ -6,6 +6,6 @@ mercurial/* filter=lfs diff=lfs merge=lfs -text
 mercurial/SOURCE filter= diff= merge= text
 mercurial/LICENSE filter= diff= merge= text
 mercurial-macos/**/* filter=lfs diff=lfs merge=lfs -text
-mercurial-macos/SOURCE filter= diff= merge= text
+mercurial-macos/SOURCE.md filter= diff= merge= text
 mercurial-macos/LICENSE filter= diff= merge= text
 * text=auto
