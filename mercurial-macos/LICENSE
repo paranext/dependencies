@@ -1,0 +1,10 @@
+This bundle includes:
+
+• **Mercurial (hg)** — distributed under the GNU General Public License version 2 or later (GPL-2.0-or-later).  
+• **Python 3.13 runtime and standard library** — distributed under the Python Software Foundation License (PSF License, version 2).  
+
+References:
+- Mercurial license: GPL-2.0-or-later  [oai_citation:0‡Wikipedia](https://en.wikipedia.org/wiki/Mercurial?utm_source=chatgpt.com)  
+- Python license: PSF License Version 2  [oai_citation:1‡Python documentation](https://docs.python.org/3/license.html?utm_source=chatgpt.com) [oai_citation:2‡Wikipedia](https://en.wikipedia.org/wiki/Python_Software_Foundation_License?utm_source=chatgpt.com)  
+
+Please review the full license texts in the respective project repositories for exact terms and conditions.
