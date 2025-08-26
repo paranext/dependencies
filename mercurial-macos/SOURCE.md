@@ -16,15 +16,20 @@ To build:
    cp /opt/local/bin/hg hg-universal/
    cp -R /opt/local/Library/Frameworks/Python.framework/Versions/3.13 hg-universal/
    ```
-3. Test:
+3. Add bundled site-packages to `sys.path` so `hg` can find Mercurial libraries
+   1. Edit hg and add the following line after the imports:
+   ```python
+   sys.path.insert(0, os.path.join(os.path.dirname(__file__), "3.13", "lib", "python3.13", "site-packages"))
+   ```
+4. Test:
    ```bash
    ./hg-universal/hg version
    ```
-4. Create compressed archive:
+5. Create compressed archive:
    ```bash
    tar -c --xz -f hg-macos-universal.tar.xz hg-universal
    ```
-5. Generate checksum file:
+6. Generate checksum file:
    ```bash
    shasum -a 256 hg-macos-universal.tar.xz > hg-macos-universal.tar.xz.sha256
    ```
