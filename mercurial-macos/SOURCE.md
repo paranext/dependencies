@@ -17,9 +17,8 @@ To build:
    cp -R /opt/local/Library/Frameworks/Python.framework/Versions/3.13 hg-universal/
    ```
 3. Add bundled site-packages to `sys.path` so `hg` can find Mercurial libraries
-   1. In `hg` add the following after import statements:
-   ```bash
-   # Add bundled site-packages to sys.path
+   1. Edit hg and add the following line after the imports:
+   ```python
    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "3.13", "lib", "python3.13", "site-packages"))
    ```
 4. Test:
