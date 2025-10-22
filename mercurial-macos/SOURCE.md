@@ -43,19 +43,21 @@ binaries = collect_dynamic_libs('mercurial')
 
 ### 2. Prepare Virtual Environments for each Architecture
 
+P10S is expecting the specific version 7.0.2 in the filename. If you update this version you need to include the new version in the filename and update `.erb/scripts/download-mercurial-macos.js`.
+
 ```bash
 # ARM64 (native)
 python3 -m venv /tmp/hg-pyinstaller-venv-arm64
 source /tmp/hg-pyinstaller-venv-arm64/bin/activate
 pip install --upgrade pip
-pip install pyinstaller mercurial
+pip install pyinstaller mercurial==7.0.2
 deactivate
 
 # x86_64 (Rosetta)
 arch -x86_64 python3 -m venv /tmp/hg-pyinstaller-venv-x86
 source /tmp/hg-pyinstaller-venv-x86/bin/activate
 pip install --upgrade pip
-pip install pyinstaller mercurial
+pip install pyinstaller mercurial==7.0.2
 deactivate
 ```
 
@@ -97,7 +99,7 @@ lipo -info hg
 Expected output:
 
 ```
-Mercurial Distributed SCM (version 7.1.1)
+Mercurial Distributed SCM (version 7.0.2)
 (see https://mercurial-scm.org for more information)
 
 Copyright (C) 2005-2025 Olivia Mackall and others
@@ -110,8 +112,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```bash
 mkdir hg-universal
 mv hg hg-universal/hg
-tar -c --xz -f hg-macos-universal.tar.xz hg-universal
-shasum -a 256 hg-macos-universal.tar.xz > hg-macos-universal.tar.xz.sha256
+tar -c --xz -f hg-macos-universal_7.0.2.tar.xz hg-universal
+shasum -a 256 hg-macos-universal_7.0.2.tar.xz > hg-macos-universal_7.0.2.tar.xz.sha256
 ```
 
 ## Data Source
