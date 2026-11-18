@@ -4,6 +4,8 @@
 
 The DB files in this directory should be coming from the results of running https://github.com/paranext/marble-tools/actions/workflows/build-english-db.yml. The English DB file is saved here as lexical.db, and the file is compressed using `xz` to save download bandwidth.
 
+The current `lexical.db.xz` was built from marble-lexicon `9467a4f` (2026-11-13) by marble-tools `cd99615` ([paranext/marble-tools#10](https://github.com/paranext/marble-tools/pull/10)), workflow [run 44412514796](https://github.com/paranext/marble-tools/actions/runs/44412514796).
+
 To create the checksum file, run:
 
 ```
