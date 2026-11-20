@@ -1,0 +1,17 @@
+{
+  "marbleTools": {
+    "repository": "paranext/marble-tools",
+    "commit": "53ce3755e97a07156c36a8a5e72305010682f954",
+    "pullRequestHead": "e0eae62843e841ed204238695297507f79087e8a"
+  },
+  "marbleLexicon": {
+    "repository": "ubsicap/marble-lexicon",
+    "commit": "9467a4ffeb9c249fab8e5a4cb0fa4df46e14b2dc",
+    "date": "2026-11-13T08:41:07-05:00"
+  },
+  "database": {
+    "file": "lexical.db",
+    "sha256": "b6a4aedd5777d18db2e2c2230428dabbc1c463d29fdc14568d9964fc7f8b1c27"
+  },
+  "workflowRun": "https://github.com/paranext/marble-tools/actions/runs/44835361992"
+}

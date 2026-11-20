@@ -4,19 +4,21 @@
 
 The DB files in this directory should be coming from the results of running https://github.com/paranext/marble-tools/actions/workflows/build-english-db.yml. The English DB file is saved here as lexical.db, and the file is compressed using `xz` to save download bandwidth.
 
-The current `lexical.db.xz` was built from marble-lexicon `9467a4f` (2026-11-13) by marble-tools `cd99615` ([paranext/marble-tools#10](https://github.com/paranext/marble-tools/pull/10)), workflow [run 44412514796](https://github.com/paranext/marble-tools/actions/runs/44412514796). The decompressed `lexical.db` has sha256 `9a9d10103efd803e03e4ed7436aa5d1df8522f7c54e3c29bab117bc42c926b8b`; it was compressed with `xz -9e -T0 -k lexical.db` (XZ Utils 5.8.4). Other thread settings (`-T1`) produce different bytes.
+`build-info.json` says which build the current `lexical.db.xz` is: the marble-tools and marble-lexicon commits it was built from, the workflow run, and the sha256 of the decompressed `lexical.db`. The database was compressed with `xz -9e -T0 -k lexical.db` (XZ Utils 5.8.4); other thread settings (`-T1`) produce different bytes.
 
 To update the DB:
 
-1. Download the `english-database` artifact of a successful workflow run on marble-tools `main` and rename `english.db` to `lexical.db`.
-2. Compress it with `xz -9e -T0 -k lexical.db`.
+1. Download the `english-database` artifact of a successful workflow run on marble-tools `main`. It holds `english.db` and `build-info.json`.
+2. Rename `english.db` to `lexical.db` and compress it with `xz -9e -T0 -k lexical.db`.
 3. Create the checksum file:
 
    ```
    sha256sum lexical.db.xz > lexical.db.xz.sha256
    ```
 
-4. Update the paragraph above: the workflow run and its marble-tools commit, the marble-lexicon commit and the decompressed DB's sha256 (both in the run's summary), and the `xz` command and version.
+4. Copy `lexical.db.xz`, `lexical.db.xz.sha256` and the artifact's `build-info.json` into this directory. If your `xz` version differs, update it above.
+5. The `Check lexical DB` workflow checks that the database matches both files and that `build-info.json` names a marble-tools commit on `main`. You can run it locally with `python3 .github/scripts/check_lexical_db.py`.
+6. In paranext-core, change the dependencies commit that `extensions/src/platform-lexical-tools/lib/download-db.ts` downloads from to the commit that publishes the new database.
 
 ## Data Source
 
