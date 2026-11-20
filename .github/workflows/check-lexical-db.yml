@@ -1,0 +1,24 @@
+name: Check lexical DB
+
+on:
+  pull_request:
+    paths: ['lexical-db/**', '.github/scripts/check_lexical_db.py', '.github/workflows/check-lexical-db.yml']
+  push:
+    branches: [main]
+    paths: ['lexical-db/**', '.github/scripts/check_lexical_db.py', '.github/workflows/check-lexical-db.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Check the database against its checksum and build-info.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B .github/scripts/check_lexical_db.py lexical-db
